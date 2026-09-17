@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Spracherkennungsdienst" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Spracherkennungsdienst" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="colorPrimary">#6200EE</item>
-        <item name="colorPrimaryVariant">#3700B3</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="colorPrimaryDark">#3700B3</item>
+        <item name="android:statusBarColor">#3700B3</item>
     </style>
 </resources>
