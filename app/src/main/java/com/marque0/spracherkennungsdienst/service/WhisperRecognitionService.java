@@ -72,20 +72,20 @@ public class WhisperRecognitionService extends RecognitionService {
 
         if (checkSelfPermission(Manifest.permission.RECORD_AUDIO)
                 != PackageManager.PERMISSION_GRANTED) {
-            dispatchError(RecognitionListener.ERROR_INSUFFICIENT_PERMISSIONS,
+            dispatchError(SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS,
                     "Mikrofon-Berechtigung fehlt.");
             return;
         }
 
         if (!isInitialized) {
-            dispatchError(RecognitionListener.ERROR_CLIENT,
+            dispatchError(SpeechRecognizer.ERROR_CLIENT,
                     "Whisper-Modell noch nicht bereit. Öffne die App und lade das Modell.");
             return;
         }
 
         dispatchReadyForSpeech(new Bundle());
         if (!recorder.startRecording()) {
-            dispatchError(RecognitionListener.ERROR_AUDIO, "Audioaufnahme konnte nicht starten.");
+            dispatchError(SpeechRecognizer.ERROR_AUDIO, "Audioaufnahme konnte nicht starten.");
             return;
         }
         dispatchBeginningOfSpeech();
