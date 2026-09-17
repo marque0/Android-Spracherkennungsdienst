@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Spracherkennungsdienst</string>
+    <string name="service_name">Lokaler Spracherkennungsdienst</string>
+    <string name="microphone_permission_title">Mikrofon-Berechtigung</string>
+    <string name="microphone_permission_message">Diese App braucht Mikrofonzugriff, um Sprache zu erkennen.</string>
+    <string name="grant_permission">Berechtigung erteilen</string>
+    <string name="status_ready">Bereit. In den Spracheingabe-Einstellungen auswählbar.</string>
+    <string name="status_listening">Hört zu …</string>
+    <string name="open_settings">Spracheingabe-Einstellungen öffnen</string>
+</resources>
