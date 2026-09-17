@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Spracherkennungsdienst</string>
-    <string name="service_name">Lokaler Spracherkennungsdienst</string>
+    <string name="service_name">Lokaler Whisper-Spracherkennungsdienst</string>
     <string name="microphone_permission_title">Mikrofon-Berechtigung</string>
     <string name="microphone_permission_message">Diese App braucht Mikrofonzugriff, um Sprache zu erkennen.</string>
     <string name="grant_permission">Berechtigung erteilen</string>
     <string name="status_ready">Bereit. In den Spracheingabe-Einstellungen auswählbar.</string>
     <string name="status_listening">Hört zu …</string>
     <string name="open_settings">Spracheingabe-Einstellungen öffnen</string>
+    <string name="download_model">Modell herunterladen</string>
+    <string name="model_available">Modell vorhanden</string>
+    <string name="model_missing">Modell fehlt. Bitte herunterladen.</string>
+    <string name="download_complete">Download abgeschlossen.</string>
+    <string name="download_failed">Download fehlgeschlagen.</string>
+    <string-array name="model_names">
+        <item>tiny</item>
+        <item>tiny-q5_1</item>
+        <item>base</item>
+        <item>base-q5_1</item>
+        <item>small</item>
+    </string-array>
 </resources>
