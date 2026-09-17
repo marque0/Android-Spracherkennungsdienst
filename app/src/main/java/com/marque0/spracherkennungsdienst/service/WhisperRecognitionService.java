@@ -25,7 +25,7 @@ public class WhisperRecognitionService extends RecognitionService {
     private static final String PREF_NAME = "whisper_prefs";
     private static final String KEY_MODEL = "model_name";
     private static final String KEY_LANGUAGE = "language";
-    private static final String DEFAULT_MODEL = "tiny";
+    private static final String DEFAULT_MODEL = "base";
     private static final String DEFAULT_LANGUAGE = "de";
 
     private final Handler uiHandler = new Handler(Looper.getMainLooper());

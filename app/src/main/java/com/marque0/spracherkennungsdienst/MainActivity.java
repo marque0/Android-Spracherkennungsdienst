@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_MIC = 1;
     private static final String PREF_NAME = "whisper_prefs";
     private static final String KEY_MODEL = "model_name";
-    private static final String DEFAULT_MODEL = "tiny";
+    private static final String DEFAULT_MODEL = "base";
 
     private Spinner modelSpinner;
     private TextView statusText;
