@@ -13,6 +13,8 @@ android {
         versionCode = 1
         versionName = "1.0.0"
 
+        ndkVersion = "26.3.11579264"
+
         externalNativeBuild {
             cmake {
                 arguments += listOf("-DANDROID_STL=c++_static")
