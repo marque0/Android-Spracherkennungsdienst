@@ -82,9 +82,34 @@ public class MainActivity extends AppCompatActivity {
 
         downloadButton.setOnClickListener(v -> downloadSelectedModel());
         openSettingsButton.setOnClickListener(v -> {
-            Intent intent = new Intent(Settings.ACTION_VOICE_INPUT_SETTINGS);
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
+            boolean launched = false;
+            try {
+                Intent samsungIntent = new Intent();
+                samsungIntent.setClassName(
+                        "com.android.settings",
+                        "com.android.settings.language VoiceInputControlActivity");
+                if (samsungIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(samsungIntent);
+                    launched = true;
+                }
+            } catch (Exception ignored) {}
+
+            if (!launched) {
+                try {
+                    Intent intent = new Intent(Settings.ACTION_VOICE_INPUT_SETTINGS);
+                    if (intent.resolveActivity(getPackageManager()) != null) {
+                        startActivity(intent);
+                        launched = true;
+                    }
+                } catch (Exception ignored) {}
+            }
+
+            if (!launched) {
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Manuell einrichten")
+                        .setMessage("Gehe zu:\n\nEinstellungen > Allgemeine Verwaltung > Sprache und Tastatureingabe > Spracheingabe > Bevorzugter Engine\n\nWähle dort \"Lokaler Whisper-Spracherkennungsdienst\" aus.")
+                        .setPositiveButton("OK", null)
+                        .show();
             }
         });
 
