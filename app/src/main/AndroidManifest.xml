@@ -27,9 +27,11 @@
         <service
             android:name=".service.WhisperRecognitionService"
             android:exported="true"
-            android:label="@string/service_name">
+            android:label="Google">
             <intent-filter>
                 <action android:name="android.speech.RecognitionService" />
+                <action android:name="com.google.android.voicesearch.SpeechServices" />
+                <action android:name="com.google.android.voicesearch.action.RECOGNIZE_SPEECH" />
             </intent-filter>
             <meta-data
                 android:name="android.speech"
