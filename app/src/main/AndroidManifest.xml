@@ -27,8 +27,7 @@
         <service
             android:name=".service.WhisperRecognitionService"
             android:exported="true"
-            android:label="@string/service_name"
-            android:permission="android.permission.MICROPHONE">
+            android:label="@string/service_name">
             <intent-filter>
                 <action android:name="android.speech.RecognitionService" />
             </intent-filter>
