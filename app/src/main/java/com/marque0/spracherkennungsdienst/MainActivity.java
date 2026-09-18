@@ -89,9 +89,16 @@ public class MainActivity extends AppCompatActivity {
                     "com.android.settings/com.android.settings.Settings$KeyboardLayoutPickerActivity",
                     "com.android.settings/com.samsung.android.settings.inputmethod.SamsungKeyboardSettingsActivity",
                     "com.android.settings/com.samsung.android.settings.inputmethod.VoiceInputControlActivity",
+                    "com.android.settings/com.samsung.android.settings.language.VoiceInputControlActivity",
+                    // Honeyboard / Samsung Keyboard app
+                    "com.samsung.android.honeyboard/.settings.HoneyBoardSettingsActivity",
+                    "com.samsung.android.honeyboard/.settings.VoiceInputSettingsActivity",
+                    "com.samsung.android.honeyboard/.settings.VoiceInputControlActivity",
+                    // Samsung OneUI settings
+                    "com.samsung.android.settings/.inputmethod.SamsungKeyboardSettingsActivity",
+                    "com.samsung.android.settings/.inputmethod.VoiceInputControlActivity",
                     // Fallbacks
                     "com.android.settings/com.android.settings.language.VoiceInputControlActivity",
-                    "com.samsung.android.honeyboard/com.samsung.android.honeyboard.settings.HoneyBoardSettingsActivity"
             };
 
             for (String className : samsungIntents) {
