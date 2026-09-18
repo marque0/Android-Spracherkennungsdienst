@@ -83,16 +83,29 @@ public class MainActivity extends AppCompatActivity {
         downloadButton.setOnClickListener(v -> downloadSelectedModel());
         openSettingsButton.setOnClickListener(v -> {
             boolean launched = false;
-            try {
-                Intent samsungIntent = new Intent();
-                samsungIntent.setClassName(
-                        "com.android.settings",
-                        "com.android.settings.language VoiceInputControlActivity");
-                if (samsungIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(samsungIntent);
-                    launched = true;
-                }
-            } catch (Exception ignored) {}
+
+            String[] samsungIntents = {
+                    // Samsung Settings > General management > Keyboard > Samsung Keyboard > Voice input
+                    "com.android.settings/com.android.settings.Settings$KeyboardLayoutPickerActivity",
+                    "com.android.settings/com.samsung.android.settings.inputmethod.SamsungKeyboardSettingsActivity",
+                    "com.android.settings/com.samsung.android.settings.inputmethod.VoiceInputControlActivity",
+                    // Fallbacks
+                    "com.android.settings/com.android.settings.language.VoiceInputControlActivity",
+                    "com.samsung.android.honeyboard/com.samsung.android.honeyboard.settings.HoneyBoardSettingsActivity"
+            };
+
+            for (String className : samsungIntents) {
+                if (launched) break;
+                try {
+                    String[] parts = className.split("/");
+                    Intent intent = new Intent();
+                    intent.setClassName(parts[0], parts[1]);
+                    if (intent.resolveActivity(getPackageManager()) != null) {
+                        startActivity(intent);
+                        launched = true;
+                    }
+                } catch (Exception ignored) {}
+            }
 
             if (!launched) {
                 try {
@@ -107,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             if (!launched) {
                 new AlertDialog.Builder(MainActivity.this)
                         .setTitle("Manuell einrichten")
-                        .setMessage("Gehe zu:\n\nEinstellungen > Allgemeine Verwaltung > Sprache und Tastatureingabe > Spracheingabe > Bevorzugter Engine\n\nWähle dort \"Lokaler Whisper-Spracherkennungsdienst\" aus.")
+                        .setMessage("Gehe zu:\n\nEinstellungen > Allgemeine Verwaltung > Tastatur > Samsung-Tastatur > Spracheingabe\n\nWähle dort \"Lokaler Whisper-Spracherkennungsdienst\" aus.")
                         .setPositiveButton("OK", null)
                         .show();
             }
